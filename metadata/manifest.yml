@@ -1,14 +1,14 @@
 Name: mysql-cluster-master
 Cartridge-Short-Name: MYSQL
 Architecture: noarch
-Display-Name: MySQL Database 5.1
+Display-Name: MySQL Database 5.5
 Description: "MySQL is a multi-user, multi-threaded SQL database server."
-Version: '5.1'
-Source-Url: https://github.com/warthog9/os-mysql-master.git
-Versions: [5.1]
+Version: '5.5'
+Source-Url: https://github.com/starthpro/os-mysql-master.git
+Versions: [5.5]
 Cartridge-Version: 0.2.1
 Compatible-Versions: [0.2.0]
-Cartridge-Vendor: warthog9
+Cartridge-Vendor: starthpro
 License: GPL
 Vendor: Oracle
 Categories:
@@ -32,15 +32,17 @@ Cart-Data:
     Type: cart_data
     Description: "MySQL DB connection URL"
 Suggests:
-  - phpmyadmin-3
+  - phpmyadmin-4
 Provides:
-  - mysql-5.1
+  - mysql-5.5
   - mysql 
   - mysql-singleton-master
   - mysql-master
 Conflicts:
   - postgresql-8.4
 Publishes:
+  publish-db-connection-info:
+    Type: ENV:NET_TCP:db:connection-info
   publish-db-connection-info:
     Type: "ENV:NET_TCP:db:connection-info"
 Subscribes:
@@ -58,3 +60,12 @@ Endpoints:
     Private-Port-Name: DB_PORT
     Private-Port:      3306
     Public-Port-Name:  DB_PROXY_PORT
+  Protocols:
+  - mysql
+Version-Overrides:
+  '5.1':
+    Display-Name: MySQL 5.1
+    Provides:
+    - mysql-5.1
+    - mysql
+    - mysql-singleton-master
