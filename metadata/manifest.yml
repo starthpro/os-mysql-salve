@@ -4,7 +4,7 @@ Architecture: noarch
 Display-Name: MySQL Database 5.5
 Description: "MySQL is a multi-user, multi-threaded SQL database server."
 Version: '5.5'
-Source-Url: https://github.com/starthpro/os-mysql-master.git
+Source-Url: https://github.com/starthpro/os-mysql-salve.git
 Versions: [5.5]
 Cartridge-Version: 0.2.1
 Compatible-Versions: [0.2.0]
