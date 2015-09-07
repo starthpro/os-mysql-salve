@@ -37,7 +37,7 @@ Provides:
   - mysql-5.5
   - mysql 
   - mysql-singleton-master
-  - mysql-master
+  - mysql-slave
 Conflicts:
   - postgresql-8.4
 Publishes:
